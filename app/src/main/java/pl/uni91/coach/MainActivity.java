@@ -22,12 +22,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.core.view.WindowCompat;
+import androidx.core.splashscreen.SplashScreen;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -287,19 +287,47 @@ public final class MainActivity extends AppCompatActivity {
         Button searchButton=primaryButton("SZUKAJ");searchButton.setOnClickListener(v->showLibrary(motorItems,search.getText().toString().trim()));body.addView(searchButton,marginTop(8));
         try {
             String needle=query.toLowerCase(java.util.Locale.ROOT);int shown=0;
+            List<View> expandedSections=new ArrayList<>();
             for(AnalysisEngine.LibraryItem item:engine.libraryItems(motorItems)){
                 if(!needle.isEmpty()&&!item.searchableText().contains(needle))continue;
-                body.addView(libraryCard(item),marginTop(14));shown++;
+                body.addView(libraryCard(item,expandedSections),marginTop(14));shown++;
             }
             if(shown==0)body.addView(paragraph("Brak środków pasujących do wyszukiwania."),marginTop(20));
         } catch(Exception error){body.addView(paragraph("Błąd biblioteki: "+error.getMessage()),marginTop(16));}
         render(body);
     }
 
-    private MaterialCardView libraryCard(AnalysisEngine.LibraryItem item){
-        MaterialCardView card=card();LinearLayout box=vertical(14);box.addView(label(item.id+" • "+item.name));
-        try(InputStream input=getAssets().open("images/"+item.id+".png")){ImageView image=new ImageView(this);image.setScaleType(ImageView.ScaleType.CENTER_CROP);image.setImageBitmap(BitmapFactory.decodeStream(input));box.addView(image,fixedHeight(175,10));}catch(Exception ignored){}
-        box.addView(paragraph(item.detail()),marginTop(10));box.addView(paragraph("Status: "+item.status),marginTop(8));card.addView(box);return card;
+    private MaterialCardView libraryCard(AnalysisEngine.LibraryItem item,List<View> expandedSections){
+        MaterialCardView card=card();
+        LinearLayout box=vertical(14);
+        box.addView(label(item.id+" • "+item.name));
+        TextView hint=paragraph("Dotknij, aby zobaczyć grafikę i pełny opis  ⌄");
+        hint.setTextColor(getColor(R.color.fea_green));
+        box.addView(hint,marginTop(6));
+
+        LinearLayout details=vertical(0);
+        details.setVisibility(View.GONE);
+        try(InputStream input=getAssets().open("images/"+item.id+".png")){
+            ImageView image=new ImageView(this);
+            image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            image.setImageBitmap(BitmapFactory.decodeStream(input));
+            details.addView(image,fixedHeight(175,10));
+        }catch(Exception ignored){}
+        details.addView(paragraph(item.detail()),marginTop(10));
+        details.addView(paragraph("Status: "+item.status),marginTop(8));
+        box.addView(details);
+        expandedSections.add(details);
+
+        card.setClickable(true);
+        card.setFocusable(true);
+        card.setOnClickListener(v->{
+            boolean opening=details.getVisibility()!=View.VISIBLE;
+            for(View section:expandedSections)section.setVisibility(View.GONE);
+            if(opening)details.setVisibility(View.VISIBLE);
+            hint.setText(opening?"Dotknij ponownie, aby zwinąć  ⌃":"Dotknij, aby zobaczyć grafikę i pełny opis  ⌄");
+        });
+        card.addView(box);
+        return card;
     }
 
     private void showReplacement(String day,AnalysisEngine.TrainingPlan plan,int index){
