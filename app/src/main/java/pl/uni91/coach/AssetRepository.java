@@ -24,7 +24,7 @@ public final class AssetRepository {
 
         String[] images = context.getAssets().list("images");
         int imageCount = images == null ? 0 : images.length;
-        if (fea != 40 || motor != 40 || behaviors != 26 || imageCount != 80) {
+        if (fea != 40 || motor != 40 || behaviors != 26 || imageCount < 80) {
             throw new JSONException("Niepełna baza: FEA=" + fea + ", M=" + motor
                     + ", zachowania=" + behaviors + ", grafiki=" + imageCount);
         }
