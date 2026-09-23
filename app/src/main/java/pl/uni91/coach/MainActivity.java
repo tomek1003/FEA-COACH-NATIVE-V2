@@ -27,6 +27,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+import androidx.core.view.WindowCompat;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -71,6 +72,7 @@ public final class MainActivity extends AppCompatActivity {
     }
 
     private void openSystem() {
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
         WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
         controller.show(WindowInsetsCompat.Type.systemBars());
         setContentView(R.layout.activity_main);
