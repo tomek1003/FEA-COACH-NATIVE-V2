@@ -1,0 +1,210 @@
+[
+  {
+    "Kod": "A1",
+    "Problem": "Otwarcie gry",
+    "FEA 1": "FEA-04",
+    "FEA 2": "FEA-09",
+    "Motoryka": "M-01",
+    "Zachowanie docelowe": "Rozpoznaj pressing, ustaw ciało i znajdź wolnego zawodnika."
+  },
+  {
+    "Kod": "A2",
+    "Problem": "Przeniesienie ciężaru / szerokość",
+    "FEA 1": "FEA-06",
+    "FEA 2": "FEA-07",
+    "Motoryka": "M-04",
+    "Zachowanie docelowe": "Przyciągnij rywala, zobacz wolną stronę i przenieś grę."
+  },
+  {
+    "Kod": "A3",
+    "Problem": "Tworzenie sytuacji",
+    "FEA 1": "FEA-03",
+    "FEA 2": "FEA-08",
+    "Motoryka": "M-04",
+    "Zachowanie docelowe": "Stwórz przewagę i zmusz obrońcę do podjęcia decyzji."
+  },
+  {
+    "Kod": "A4",
+    "Problem": "Finalizacja",
+    "FEA 1": "FEA-13",
+    "FEA 2": "FEA-14",
+    "Motoryka": "M-01",
+    "Zachowanie docelowe": "Rozpoznaj moment podania lub strzału i zakończ akcję."
+  },
+  {
+    "Kod": "O1",
+    "Problem": "Wysoki pressing",
+    "FEA 1": "FEA-10",
+    "FEA 2": "FEA-18",
+    "Motoryka": "M-01",
+    "Zachowanie docelowe": "Pierwszy naciska, pozostali zamykają kierunki podania."
+  },
+  {
+    "Kod": "O2",
+    "Problem": "Blok 1–5–2–1",
+    "FEA 1": "FEA-17",
+    "FEA 2": "FEA-18",
+    "Motoryka": "M-06",
+    "Zachowanie docelowe": "Gdy pressing odpada, odbuduj kompaktowy blok 1–5–2–1."
+  },
+  {
+    "Kod": "O3",
+    "Problem": "Obrona bramki",
+    "FEA 1": "FEA-16",
+    "FEA 2": "FEA-17",
+    "Motoryka": "M-07",
+    "Zachowanie docelowe": "Naciskaj piłkę, asekuruj partnera i chroń bramkę."
+  },
+  {
+    "Kod": "T-",
+    "Problem": "Reakcja po stracie",
+    "FEA 1": "FEA-11",
+    "FEA 2": "FEA-19",
+    "Motoryka": "M-03",
+    "Zachowanie docelowe": "Po stracie natychmiast odzyskaj piłkę albo zatrzymaj kontratak."
+  },
+  {
+    "Kod": "T+",
+    "Problem": "Pierwsza decyzja po odbiorze",
+    "FEA 1": "FEA-12",
+    "FEA 2": "FEA-20",
+    "Motoryka": "M-04",
+    "Zachowanie docelowe": "Po odbiorze podnieś głowę i wybierz atak albo utrzymanie."
+  },
+  {
+    "Kod": "MEN",
+    "Problem": "Reakcja na błąd / wynik",
+    "FEA 1": "FEA-19",
+    "FEA 2": "FEA-20",
+    "Motoryka": "M-08",
+    "Zachowanie docelowe": "Po błędzie wróć do zadania i utrzymaj właściwe zachowanie."
+  },
+  {
+    "Kod": "A5",
+    "Problem": "Utrzymanie pod presją",
+    "FEA 1": "FEA-25",
+    "FEA 2": "FEA-05",
+    "Motoryka": "M-09",
+    "Zachowanie docelowe": "Zachowaj spokój, skanuj i wykorzystaj wolnego zawodnika."
+  },
+  {
+    "Kod": "A6",
+    "Problem": "Gra między liniami",
+    "FEA 1": "FEA-24",
+    "FEA 2": "FEA-08",
+    "Motoryka": "M-09",
+    "Zachowanie docelowe": "Znajdź zawodnika za pierwszą linią pressingu."
+  },
+  {
+    "Kod": "A7",
+    "Problem": "Trzeci zawodnik",
+    "FEA 1": "FEA-23",
+    "FEA 2": "FEA-35",
+    "Motoryka": "M-30",
+    "Zachowanie docelowe": "Podaj, rusz i otwórz trzecią opcję gry."
+  },
+  {
+    "Kod": "A8",
+    "Problem": "Orientacja ciała / przyjęcie kierunkowe",
+    "FEA 1": "FEA-33",
+    "FEA 2": "FEA-01",
+    "Motoryka": "M-31",
+    "Zachowanie docelowe": "Przyjmij piłkę tak, aby widzieć więcej niż jedną opcję."
+  },
+  {
+    "Kod": "A9",
+    "Problem": "Przewaga na boku",
+    "FEA 1": "FEA-38",
+    "FEA 2": "FEA-03",
+    "Motoryka": "M-25",
+    "Zachowanie docelowe": "Przenieś grę i stwórz przewagę 2v1 na boku."
+  },
+  {
+    "Kod": "A10",
+    "Problem": "Zmiana kierunku ataku",
+    "FEA 1": "FEA-34",
+    "FEA 2": "FEA-26",
+    "Motoryka": "M-12",
+    "Zachowanie docelowe": "Nie atakuj chronionej przestrzeni; zmień kierunek działania."
+  },
+  {
+    "Kod": "A11",
+    "Problem": "Szerokość w otwarciu",
+    "FEA 1": "FEA-32",
+    "FEA 2": "FEA-28",
+    "Motoryka": "M-13",
+    "Zachowanie docelowe": "Rozciągnij ustawienie, aby otworzyć środek i stronę przeciwną."
+  },
+  {
+    "Kod": "O4",
+    "Problem": "Pressing zespołowy / sygnały",
+    "FEA 1": "FEA-36",
+    "FEA 2": "FEA-10",
+    "Motoryka": "M-11",
+    "Zachowanie docelowe": "Rozpoznaj sygnał i rozpocznij pressing jako cały zespół."
+  },
+  {
+    "Kod": "O5",
+    "Problem": "Asekuracja",
+    "FEA 1": "FEA-16",
+    "FEA 2": "FEA-30",
+    "Motoryka": "M-07",
+    "Zachowanie docelowe": "Jeden wychodzi do piłki, drugi zabezpiecza przestrzeń."
+  },
+  {
+    "Kod": "O6",
+    "Problem": "Kompaktowość",
+    "FEA 1": "FEA-17",
+    "FEA 2": "FEA-18",
+    "Motoryka": "M-06",
+    "Zachowanie docelowe": "Zachowaj małe odległości między zawodnikami i formacjami."
+  },
+  {
+    "Kod": "O7",
+    "Problem": "Zabezpieczenie po ataku",
+    "FEA 1": "FEA-30",
+    "FEA 2": "FEA-31",
+    "Motoryka": "M-32",
+    "Zachowanie docelowe": "Atakuj, ale utrzymuj zabezpieczenie za piłką."
+  },
+  {
+    "Kod": "T-2",
+    "Problem": "Odzyskaj albo zorganizuj blok",
+    "FEA 1": "FEA-31",
+    "FEA 2": "FEA-18",
+    "Motoryka": "M-23",
+    "Zachowanie docelowe": "Przez pięć sekund odzyskuj; potem wróć do organizacji."
+  },
+  {
+    "Kod": "T+2",
+    "Problem": "Odbiór i wyjście spod presji",
+    "FEA 1": "FEA-27",
+    "FEA 2": "FEA-12",
+    "Motoryka": "M-04",
+    "Zachowanie docelowe": "Po odbiorze wyjdź z presji pierwszym bezpiecznym działaniem."
+  },
+  {
+    "Kod": "F1",
+    "Problem": "Finalizacja w przewadze",
+    "FEA 1": "FEA-29",
+    "FEA 2": "FEA-13",
+    "Motoryka": "M-05",
+    "Zachowanie docelowe": "Wykorzystaj krótką przewagę, zanim obrona się odbuduje."
+  },
+  {
+    "Kod": "F2",
+    "Problem": "Finalizacja po wycofaniu",
+    "FEA 1": "FEA-37",
+    "FEA 2": "FEA-15",
+    "Motoryka": "M-19",
+    "Zachowanie docelowe": "Po dojściu do linii końcowej znajdź wycofanie i zakończ akcję."
+  },
+  {
+    "Kod": "PER",
+    "Problem": "Skanowanie / percepcja przestrzeni",
+    "FEA 1": "FEA-21",
+    "FEA 2": "FEA-07",
+    "Motoryka": "M-28",
+    "Zachowanie docelowe": "Skanuj przed przyjęciem i rozpoznaj wolną przestrzeń."
+  }
+]

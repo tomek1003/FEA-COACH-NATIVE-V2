@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fea_green">#126BEB</color>
+    <color name="fea_green_dark">#071B3A</color>
+    <color name="fea_surface">#F3F7FD</color>
+    <color name="white">#FFFFFF</color>
+</resources>

@@ -1,0 +1,21 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'pl.uni91.coach'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'pl.uni91.coach'
+        minSdk 24
+        targetSdk 35
+        versionCode 20
+        versionName '2.0.0-dev'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.10.0'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    implementation 'com.google.android.material:material:1.12.0'
+}
