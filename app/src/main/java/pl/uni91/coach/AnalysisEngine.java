@@ -353,8 +353,24 @@ public final class AnalysisEngine {
         LibraryItem(String i,String n,String s,boolean m,JSONObject o){id=i;name=n;status=s;motor=m;source=o;}
         public String searchableText(){return lower(source.toString());}
         public String detail(){
-            if(motor) return first(source,"Akcent")+"\n"+first(source,"Organizacja")+"\n"+first(source,"Coaching / bezpieczeństwo");
-            return first(source,"Cel / percepcja","Cel/percepcja")+"\n"+first(source,"Organizacja")+"\n"+first(source,"Przebieg i zasady");
+            if(motor) return "AKCENT\n"+first(source,"Akcent")
+                    +"\n\nOBJĘTOŚĆ\n"+first(source,"Objętość")
+                    +"\n\nPRZERWA\n"+first(source,"Przerwa")
+                    +"\n\nORGANIZACJA\n"+first(source,"Organizacja")
+                    +"\n\nCOACHING / BEZPIECZEŃSTWO\n"+first(source,"Coaching / bezpieczeństwo")
+                    +"\n\nPOWIĄZANIE\n"+first(source,"Powiązanie")
+                    +"\n\nTYP / WERSJA\n"+first(source,"Typ")+" / "+first(source,"Wersja");
+            return "HASŁO\n"+first(source,"Hasło")
+                    +"\n\nOBSZAR\n"+first(source,"Obszar")
+                    +"\n\nCZAS / ZAWODNICY / POLE\n"+first(source,"Czas")+" min • "+first(source,"Zawodnicy")+" • "+first(source,"Pole")
+                    +"\n\nCEL / PERCEPCJA\n"+first(source,"Cel / percepcja","Cel/percepcja")
+                    +"\n\nORGANIZACJA\n"+first(source,"Organizacja")
+                    +"\n\nPRZEBIEG I ZASADY\n"+first(source,"Przebieg i zasady")
+                    +"\n\nPYTANIA\n"+first(source,"Pytania")
+                    +"\n\nPROGRESJA\n"+first(source,"Progresja")
+                    +"\n\nREGRESJA\n"+first(source,"Regresja")
+                    +"\n\nTRANSFER\n"+first(source,"Transfer")
+                    +"\n\nTYP / WERSJA\n"+first(source,"Typ")+" / "+first(source,"Wersja");
         }
         @Override public String toString(){return id+" • "+name;}
     }

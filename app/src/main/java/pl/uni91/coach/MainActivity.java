@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.ViewGroup;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-import androidx.core.splashscreen.SplashScreen;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -48,9 +52,32 @@ public final class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
+        showWelcomeScreen();
+    }
+
+    private void showWelcomeScreen() {
+        WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+        controller.hide(WindowInsetsCompat.Type.systemBars());
+        ImageView welcome = new ImageView(this);
+        welcome.setImageResource(R.drawable.splash_coach);
+        welcome.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        welcome.setContentDescription("Dotknij, aby otworzyć FEA Coach System");
+        welcome.setBackgroundColor(getColor(R.color.fea_green_dark));
+        setContentView(welcome);
+        welcome.setOnClickListener(v -> openSystem());
+    }
+
+    private void openSystem() {
+        WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+        controller.show(WindowInsetsCompat.Type.systemBars());
         setContentView(R.layout.activity_main);
+        View root = findViewById(R.id.root);
+        ViewCompat.setOnApplyWindowInsetsListener(root, (view, windowInsets) -> {
+            Insets bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            view.setPadding(0, bars.top, 0, bars.bottom);
+            return windowInsets;
+        });
         content = findViewById(R.id.content);
         headerTitle = findViewById(R.id.headerTitle);
         headerSubtitle = findViewById(R.id.headerSubtitle);
